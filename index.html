@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Painel de Alunos</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- CABEÇALHO -->
+      <header>
+        <h1>PAINEL DE ALUNOS</h1>
+
+        <p>Demonstração de CRUD frontend/backend (Node.js)</p>
+
+        <button
+          onclick="window.print()"
+          style="
+            margin-top: 1em;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            background: white;
+            color: var(--primary-color);
+          "
+        >
+          ⬇️ Baixar PDF ⬇️
+        </button>
+      </header>
+
+      <main>
+        <!-- FORMULÁRIO -->
+        <section class="form-section">
+          <h2>NOVO ALUNO</h2>
+
+          <form id="form-aluno">
+            <!-- ID usado durante a edição -->
+            <input type="hidden" id="aluno-id" />
+
+            <!-- NOME -->
+            <div class="input-group">
+              <label for="nome"> Nome Completo </label>
+
+              <input
+                type="text"
+                id="nome"
+                required
+                placeholder="Ex: João da Silva"
+              />
+            </div>
+
+            <!-- EMAIL -->
+            <div class="input-group">
+              <label for="email"> Email </label>
+
+              <input
+                type="email"
+                id="email"
+                required
+                placeholder="Ex: joao@email.com"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="CPF"> CPF </label>
+
+              <input
+                type="number"
+                id="cpf"
+                required
+                placeholder="text: 000.000.000-00"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="CEP"> CEP </label>
+
+              <input type="text" id="cep" required placeholder="Ex: " />
+            </div>
+
+            <div class="input-group">
+              <label for="IDADE"> Idade </label>
+              <input type="number" id="idade" required placeholder="Ex: 00 " />
+            </div>
+            <!-- CURSO -->
+            <div class="input-group">
+              <label for="curso"> Curso </label>
+
+              <select id="curso" required>
+                <option value="">Selecione um curso...</option>
+
+                <option value="Analise de sistemas">Análise de Sistemas</option>
+
+                <option value="Engenharia de Software">
+                  Engenharia de Software
+                </option>
+
+                <option value="Ciencia da Computacao">
+                  Ciência da Computação
+                </option>
+              </select>
+            </div>
+
+            <!-- BOTÕES -->
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn-cancel"
+                id="btn-cancel"
+                style="display: none"
+              >
+                Cancelar Edição
+              </button>
+
+              <button type="submit" class="btn-save" id="btn-save">
+                Salvar Aluno
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- LISTA DE ALUNOS -->
+        <section class="list-section">
+          <h2>ALUNOS CADASTRADOS</h2>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+
+                  <th>Nome</th>
+
+                  <th>Email</th>
+
+                  <th>CPF</th>
+
+                  <th>CEP</th>
+
+                  <th>Idade</th>
+
+                  <th>Curso</th>
+
+                  <th>Ações</th>
+                </tr>
+              </thead>
+
+              <tbody id="alunos-tbody">
+                <!--
+                                Os alunos serão colocados
+                                aqui pelo JavaScript
+                            -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="java.js"></script>
+  </body>
+</html>
