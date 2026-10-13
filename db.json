@@ -1,0 +1,13 @@
+{
+  "alunos": [
+    {
+      "id": 1,
+      "nome": "111",
+      "email": "1111111@gmail.com",
+      "curso": "Analise de sistemas",
+      "cpf": "11111122",
+      "cep": "1111112",
+      "idade": "11"
+    }
+  ]
+}
